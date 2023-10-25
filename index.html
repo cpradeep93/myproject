@@ -5,50 +5,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Image Search Tool</title>
+
 </head>
 <body>
-    <h1>Image Search</h1>
-    <button id="searchButton">Search</button>
-    <div id="imageContainer"></div>
-
-    <input type="text" id="searchQuery" placeholder="Search for images">
-
-
-
-<script type="text/javascript">
-document.addEventListener("DOMContentLoaded", function () {
-    const accessKey = 'm20NyNEQpB9hqAMi2bgYrxxPxTrdp6Kyqvwp9iTQERI';
-    const searchButton = document.getElementById("searchButton");
-    const searchQuery = document.getElementById("searchQuery");
-    const imageContainer = document.getElementById("imageContainer");
-
-    searchButton.addEventListener("click", () => {
-        const query = searchQuery.value;
-        if (query) {
-            searchImages(query);
-        }
-    });
-
-    function searchImages(query) {
-        fetch(`https://api.unsplash.com/search/photos?query=${query}&client_id=${accessKey}`)
-            .then(response => response.json())
-            .then(data => {
-                imageContainer.innerHTML = ''; // Clear previous results
-
-                data.results.forEach(photo => {
-                    const img = document.createElement("img");
-                    img.src = photo.urls.small;
-                    img.alt = photo.alt_description;
-                    imageContainer.appendChild(img);
-                });
-            })
-            .catch(error => {
-                console.error(error);
-            });
-    }
-});
-</script>
+    <h1>Test HTML Page in Github</h1>
+ 
 </body>
 </html>
 
